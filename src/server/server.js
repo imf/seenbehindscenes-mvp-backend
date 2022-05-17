@@ -12,7 +12,7 @@ fastify.get('/videos', async (request, reply) => {videoList.get(request, reply)}
 
 let port = process.env.PORT || 3000
 
-fastify.listen(port, function (err, address) {
+fastify.listen(port, '0.0.0.0', (err, address) => {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
