@@ -9,7 +9,7 @@ class VideoList {
             if (err) {
                 response.send({status: 500, message: 'Data Access Error', error: err})
             } else {
-                response.send({status: 200, message: 'ok', rows})
+                response.send({status: 200, message: 'ok', videos: rows})
             }
           })
     }
