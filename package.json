@@ -1,0 +1,30 @@
+{
+  "name": "mvpbackend",
+  "version": "1.0.0",
+  "description": "A lightweight backend for an MVP of Partyline/SeenBehindScenes",
+  "main": "server.js",
+  "scripts": {
+    "watch": "nodemon ./src/server/server.js",
+    "start": "node ./src/server/server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imf/seenbehindscenes-mvp-backend.git"
+  },
+  "author": "Ian McFarland <ian@neo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imf/seenbehindscenes-mvp-backend/issues"
+  },
+  "homepage": "https://github.com/imf/seenbehindscenes-mvp-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "fastify": "^3.29.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16"
+  }
+}
