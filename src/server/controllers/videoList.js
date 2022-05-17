@@ -1,11 +1,11 @@
 const mysql = require('mysql2')
-let dbUrl = process.env.DB_URL
+const GET_ALL = 'SELECT BIN_TO_UUID(id) AS id, name, description, thumbnail_url, video_url, duration, created_at FROM videos ORDER BY created_at;'
+
 class VideoList {
-      
     async get(request, response) {
         const connection = await mysql.createConnection(process.env.DB_URL)
         await connection.connect()
-        connection.query('SELECT * FROM videos ORDER BY name', function (err, rows, fields) {
+        connection.query(GET_ALL, function (err, rows, fields) {
             if (err) {
                 response.send({status: 500, message: 'Data Access Error', error: err})
             } else {
@@ -15,3 +15,4 @@ class VideoList {
     }
 }
 module.exports = VideoList
+
