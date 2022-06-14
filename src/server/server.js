@@ -8,7 +8,7 @@ const fastify = require('fastify')({
 })
 
 fastify.register(require('@fastify/postgres'), {
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL + '?ssl=true'
 })
 
 fastify.get('/', (request, reply) => {
